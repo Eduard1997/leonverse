@@ -11,6 +11,7 @@ const glob = require('glob');
 const Jimp = require('jimp');
 const $ = require('gulp-load-plugins')();
 const sass = require('gulp-sass')(require('node-sass'));
+const deploy = require('gulp-gh-pages');
 
 const gulpConfig = (() => {
     // template variable
@@ -63,7 +64,6 @@ function errorHandler(err) {
     this.emit('end');
 }
 
-
 /**
  * Clean Task
  */
@@ -72,7 +72,6 @@ gulp.task('clean', (cb) => {
         cb();
     });
 });
-
 
 /**
  * BrowserSync Task
@@ -86,7 +85,6 @@ gulp.task('browserSyncTask', () => {
         },
     });
 });
-
 
 /**
  * HTML Task
@@ -148,7 +146,6 @@ gulp.task('html', () => {
         });
 });
 
-
 /**
  * Generate CSS Comments for Envato Rules.
  * @param cont
@@ -183,62 +180,57 @@ function generateCSSComments(cont) {
     return cont;
 }
 
-
 /**
  * CSS Task
  */
-gulp.task('css', () => {
-    return gulp.src(gulpConfig.css.from)
-        .pipe($.if(process.env.NODE_ENV === 'dev', $.plumber({ errorHandler })))
-        .pipe(sass(gulpConfig.css.sass))
-        .pipe($.autoprefixer())
-        .pipe($.change(generateCSSComments))
-        .pipe($.header(getHeaderComment()))
-        .pipe($.if(process.env.NODE_ENV !== 'production', gulp.dest(gulpConfig.css.to)))
-        .pipe(browserSync.stream())
-        .pipe($.if(process.env.NODE_ENV !== 'dev', $.cleanCss()))
-        .pipe($.rename({
-            extname: '.min.css',
-        }))
-        .pipe(gulp.dest(gulpConfig.css.to));
-});
-
+gulp.task('css', () => gulp.src(gulpConfig.css.from)
+    .pipe($.if(process.env.NODE_ENV === 'dev', $.plumber({ errorHandler })))
+    .pipe(sass(gulpConfig.css.sass))
+    .pipe($.autoprefixer())
+    .pipe($.change(generateCSSComments))
+    .pipe($.header(getHeaderComment()))
+    .pipe($.if(process.env.NODE_ENV !== 'production', gulp.dest(gulpConfig.css.to)))
+    .pipe(browserSync.stream())
+    .pipe($.if(process.env.NODE_ENV !== 'dev', $.cleanCss()))
+    .pipe($.rename({
+        extname: '.min.css',
+    }))
+    .pipe(gulp.dest(gulpConfig.css.to)));
 
 /**
  * JS Task
  */
-gulp.task('js', () => {
-    return gulp.src(gulpConfig.js.from)
-        .pipe($.if(process.env.NODE_ENV === 'dev', $.plumber({ errorHandler })))
-        .pipe(named())
-        .pipe(webpack({
-            mode: 'none',
-            module: {
-                rules: [
-                    {
-                        test: /\.js$/,
-                        loader: 'babel-loader',
-                    },
-                ],
-            },
-        }))
-        .pipe($.if(process.env.NODE_ENV === 'production', $.change((cont) => {
-            let replaceString = '';
+gulp.task('js', () => gulp.src(gulpConfig.js.from)
+    .pipe($.if(process.env.NODE_ENV === 'dev', $.plumber({ errorHandler })))
+    .pipe(named())
+    .pipe(webpack({
+        mode: 'none',
+        module: {
+            rules: [
+                {
+                    test: /\.js$/,
+                    loader: 'babel-loader',
+                },
+            ],
+        },
+    }))
+    .pipe($.if(process.env.NODE_ENV === 'production', $.change((cont) => {
+        let replaceString = '';
 
-            // Usage protection only for selected domain name
-            if (gulpConfig.production.protect && gulpConfig.production.protect.length === 3) {
-                replaceString += `
+        // Usage protection only for selected domain name
+        if (gulpConfig.production.protect && gulpConfig.production.protect.length === 3) {
+            replaceString += `
                     if ('${gulpConfig.production.protect[0]}' !== window.location.hostname) {
                         document.body.innerHTML = '';
                         alert('${gulpConfig.production.protect[1]}');
                         window.location.replace('${gulpConfig.production.protect[2]}');
                     }
                 `;
-            }
+        }
 
-            // Google Analytics
-            if (gulpConfig.production.google_analytics) {
-                replaceString += `
+        // Google Analytics
+        if (gulpConfig.production.google_analytics) {
+            replaceString += `
                     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -247,26 +239,24 @@ gulp.task('js', () => {
                     ga('create', '${gulpConfig.production.google_analytics}', 'auto');
                     ga('send', 'pageview');
                 `;
-            }
+        }
 
-            cont = cont.replace('// prt:sc:dm', replaceString);
-            return cont;
-        })))
-        .pipe($.if(process.env.NODE_ENV === 'production', $.javascriptObfuscator({
-            compact: true,
-        })))
-        .pipe($.if(file => !file.path.match(/-init.js$/), $.header(getHeaderComment())))
-        .pipe($.if(file => process.env.NODE_ENV !== 'production' && !file.path.match(/-init.js$/), gulp.dest(gulpConfig.js.to)))
-        .pipe($.if(file => process.env.NODE_ENV !== 'dev' && !file.path.match(/-init.js$/), $.uglify()))
-        .pipe($.if(file => !file.path.match(/-init.js$/), $.rename({
-            extname: '.min.js',
-        })))
-        .pipe($.header(getHeaderComment()))
-        .pipe($.if(process.env.NODE_ENV === 'dev', $.sourcemaps.write('.')))
-        .pipe(gulp.dest(gulpConfig.js.to))
-        .pipe(browserSync.stream());
-});
-
+        cont = cont.replace('// prt:sc:dm', replaceString);
+        return cont;
+    })))
+    .pipe($.if(process.env.NODE_ENV === 'production', $.javascriptObfuscator({
+        compact: true,
+    })))
+    .pipe($.if((file) => !file.path.match(/-init.js$/), $.header(getHeaderComment())))
+    .pipe($.if((file) => process.env.NODE_ENV !== 'production' && !file.path.match(/-init.js$/), gulp.dest(gulpConfig.js.to)))
+    .pipe($.if((file) => process.env.NODE_ENV !== 'dev' && !file.path.match(/-init.js$/), $.uglify()))
+    .pipe($.if((file) => !file.path.match(/-init.js$/), $.rename({
+        extname: '.min.js',
+    })))
+    .pipe($.header(getHeaderComment()))
+    .pipe($.if(process.env.NODE_ENV === 'dev', $.sourcemaps.write('.')))
+    .pipe(gulp.dest(gulpConfig.js.to))
+    .pipe(browserSync.stream()));
 
 /**
  * Static Task
@@ -290,17 +280,14 @@ function staticTask(cb) {
 }
 gulp.task('static', staticTask);
 
-
 /**
  * Images Task
  */
-gulp.task('images', () => {
-    return gulp.src(gulpConfig.images.from)
-        .pipe($.if(process.env.NODE_ENV === 'dev', $.plumber({ errorHandler })))
-        .pipe($.changed(gulpConfig.images.to)) // Ignore unchanged files
-        .pipe(gulp.dest(gulpConfig.images.to))
-        .pipe(browserSync.stream());
-});
+gulp.task('images', () => gulp.src(gulpConfig.images.from)
+    .pipe($.if(process.env.NODE_ENV === 'dev', $.plumber({ errorHandler })))
+    .pipe($.changed(gulpConfig.images.to)) // Ignore unchanged files
+    .pipe(gulp.dest(gulpConfig.images.to))
+    .pipe(browserSync.stream()));
 
 /**
  * Async foreach.
@@ -387,7 +374,6 @@ gulp.task('deploy-image-placeholders', async (cb) => {
     cb();
 });
 
-
 /**
  * ZIP Task
  */
@@ -403,7 +389,6 @@ gulp.task('zip', () => {
         .pipe($.vinylZip.dest(gulpConfig.deploy.zip.to));
 });
 
-
 /**
  * Default Task
  */
@@ -411,7 +396,6 @@ gulp.task('default', (cb) => {
     process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
     gulp.series('clean', 'images', 'html', 'css', 'js', 'static', 'watch')(cb);
 });
-
 
 /**
  * Watch Task
@@ -422,7 +406,6 @@ gulp.task('watch', gulp.parallel('browserSyncTask', () => {
     });
 }));
 
-
 /**
  * Production Task
  */
@@ -431,20 +414,23 @@ gulp.task('production', (cb) => {
     gulp.series('clean', 'images', 'html', 'css', 'js', 'static')(cb);
 });
 
-
 /**
  * Deploy Task
  */
+/* gulp.task('deploy', (cb) => {
+    process.env.NODE_ENV = process.env.NODE_ENV || 'deploy';
+    gulp.series('production', 'move-to-deploy-folder', 'copy-static-files', 'deploy-image-placeholders', 'zip')(cb);
+}); */
 gulp.task('deploy', (cb) => {
     process.env.NODE_ENV = process.env.NODE_ENV || 'deploy';
     gulp.series('production', 'move-to-deploy-folder', 'copy-static-files', 'deploy-image-placeholders', 'zip')(cb);
+    return gulp.src('./dist/**/*')
+        .pipe(deploy());
 });
 
 // deploy task: move project to deploy folder
-gulp.task('move-to-deploy-folder', () => {
-    return gulp.src(`${gulpConfig.variables.dist}/**/*`)
-        .pipe(gulp.dest(`${gulpConfig.variables.deploy}/${gulpConfig.variables.template_name}/dist`));
-});
+gulp.task('move-to-deploy-folder', () => gulp.src(`${gulpConfig.variables.dist}/**/*`)
+    .pipe(gulp.dest(`${gulpConfig.variables.deploy}/${gulpConfig.variables.template_name}/dist`)));
 
 // deploy task: copy static files
 let staticDeployCount = 0;
