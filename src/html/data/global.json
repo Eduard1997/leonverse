@@ -2,7 +2,7 @@
     "custom_styles": false,
     "custom_css": false,
     "page_boxed": false,
-    "page_border": true,
+    "page_border": false,
     "page_share_left": true,
     "header_visible": 10,
     "header_show": true,
@@ -31,7 +31,7 @@
     "nav_contacts": false,
     "nav_contacts_light": false,
     "nav_light": false,
-    "nav_logo": "assets/images/leon_logo.png",
+    "nav_logo": "assets/images/godlike_logo_final.png",
     "nav_logo_light": "assets/images/logo-light.png",
     "nav_logo_top_light": false,
     "nav_logo_url": "index.html",
@@ -71,8 +71,8 @@
         "index.html": {
             "name": "Home"
         },
-        "#what-is-leon": {
-            "name": "What is LeonVerse?"
+        "#our-token": {
+            "name": "Our Token"
         },
         "explore-the-universe.html": {
             "name": "Explore the universe",
@@ -88,14 +88,14 @@
         "roadmap.html": {
             "name": "Roadmap"
         },
-        "whitepaper.html": {
-            "name": "Whitepaper"
-        },
         "#team-container": {
             "name": "Team"
         },
         "how-to-buy.html": {
             "name": "How to buy"
+        },
+        "whitepaper.html": {
+          "name": "Whitepaper"
         }
     },
     "users": [
