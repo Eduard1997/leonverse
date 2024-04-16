@@ -1,0 +1,189 @@
+{% set header_title = 'Gaming Template' %}
+{% set header_title_show = false %}
+{% set header_text = '
+    <h1 class="nk-title display-3" id="home-leon">LeonVerse</h1>
+
+    <div>
+        LeonVerse description
+    </div>
+
+    <div class="nk-gap-3"></div>
+    <a href="javascript:;" class="nk-btn nk-btn-lg nk-btn-color-main-1 leon-btn-buy disabled">
+        <span class="text-content">Buy $Leon</span>
+    </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:;" class="nk-btn disabled nk-btn-lg leon-btn-trailer">
+        <span class="text-content">Trailer</span>
+    </a>
+' %}
+{% set header_image = 'assets/images/anime_4.png' %}
+{% set header_size = 'md' %}
+{% set header_visible = 6 %}
+{% extends 'layouts/layout-2.html' %}
+
+{% block content %}
+<!-- START: About -->
+<div class="nk-box bg-dark-1">
+    <div class="container text-center" id="what-is-leon">
+        <div class="nk-gap-6"></div>
+        <div class="nk-gap-2"></div>
+        <h2 class="nk-title h1">What is LeonVerse?</h2>
+        <div class="nk-gap-3"></div>
+        <p class="lead">The Leonverse Token is an ERC-20-based token built on the Ethereum blockchain, known for its strong security measures and decentralized nature. With a total supply of 100 billion tokens, it offers various uses such as participating in the governance of the Leonverse network, staking to earn rewards, purchasing NFTs, and playing the P2E game. The use of the Ethereum blockchain also ensures the safety and security of the token, as all transactions are transparent and tamper-proof, making it a reliable and secure choice for its users. Ethereum is one of the most extensively used blockchain networks for building and administering decentralized apps and tokens, and its use has been rising significantly in recent years. A number of important aspects, such as Ethereum's support for a broad range of use cases, its robust security features, and its active development community, are to blame for the cryptocurrency's expanding popularity. The Ether (ETH) cryptocurrency, which is used to fund network transactions and computing services, powers the Ethereum network. As Ethereum has gained popularity, more decentralized apps have been developed on its platform, and there is a rising demand for decentralized tokens created on the Ethereum blockchain. Because of this, Ethereum has emerged as a top option for organizations and individuals wishing to create decentralized apps and tokens that provide improved transparency, security, and efficiency.</p>
+
+        <div class="nk-gap-3"></div>
+        <h2 class="nk-title h1">Our mission</h2>
+        <div class="nk-gap-3"></div>
+        <p class="lead mission">At Leonverse, our mission is to create an exceptional experience for our community through the development of a user-friendly and engaging play-to-earn game. Our goal is to not only provide an opportunity for players to earn money, but also to create a game that is enjoyable and immersive. We want our users to be able to have fun while also earning money on our platform. We believe that our platform has the potential to bring together the anime and non-anime communities into a cohesive and diverse community. By offering a variety of features and activities that appeal to a broad range of interests, we aim to create an inclusive environment where everyone can find something to enjoy.</p>
+    </div>
+</div>
+<!-- END: About -->
+
+<div class="nk-box bg-dark-1" id="leon-story">
+    <div class="nk-gap-6"></div>
+    <div class="container">
+        <h2 class="nk-title h1 text-center">Story</h2>
+        <div class="nk-gap-3"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WvUZaHGAtcY?si=FlSaohinv5sVzTAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <div class="text-left">
+                    <a href="javascript:;" class="nk-btn nk-btn-lg nk-btn-color-main-1">
+                        <span class="text-content">Cinematic</span>
+                        <i class="fa-solid fa-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="nk-gap-3"></div>
+    </div>
+</div>
+
+<!-- START: Testimonials -->
+<div class="nk-carousel-2" data-autoplay="12000" data-dots="true" id="team-container">
+    <div class="nk-gap-6"></div>
+    <div class="nk-carousel-inner">
+        <div><div>
+            <blockquote class="nk-testimonial-2">
+                <div class="nk-testimonial-photo" style="background-image: url('https://fastly.picsum.photos/id/686/150/150.jpg?hmac=WFDfhc8cLcTk2buq1ujYmIsefEnYYgFniaWJsarM63w');"></div>
+                <div class="nk-testimonial-body">
+                    <em>"Bring. Isn't years gathered give made moved. Waters sea forth. It. Gathered own abundantly kind can't it, lesser behold, may."</em>
+                </div>
+                <div class="nk-testimonial-name h4">{{ users[0].name }}</div>
+                <div class="nk-testimonial-source">Frontend Developer, Google</div>
+            </blockquote>
+        </div></div>
+        <div><div>
+            <blockquote class="nk-testimonial-2">
+                <div class="nk-testimonial-photo" style="background-image: url('https://fastly.picsum.photos/id/288/150/150.jpg?hmac=liTfsB4wOhQ8WFNsKxof_MDqDVPdqKzQ35M5OQTsEUk');"></div>
+                <div class="nk-testimonial-body">
+                    <em>"Years heaven. Dominion light and every appear that creeping all. Light gathering don't given made give open, cattle was light."</em>
+                </div>
+                <div class="nk-testimonial-name h4">{{ users[1].name }}</div>
+                <div class="nk-testimonial-source">CEO, Envato</div>
+            </blockquote>
+        </div></div>
+        <div><div>
+            <blockquote class="nk-testimonial-2">
+                <div class="nk-testimonial-photo" style="background-image: url('https://fastly.picsum.photos/id/851/150/150.jpg?hmac=QThJynmqAFEpIzhWXeFidttTkI4xEM4KpTJXQXk4IvY');"></div>
+                <div class="nk-testimonial-body">
+                    <em>"Female good moving Very thing form earth, for above herb dominion for made fifth. One them. Seas. Appear fourth seas."</em>
+                </div>
+                <div class="nk-testimonial-name h4">{{ users[2].name }}</div>
+                <div class="nk-testimonial-source">Product Designer, Apple</div>
+            </blockquote>
+        </div></div>
+        <div><div>
+            <blockquote class="nk-testimonial-2">
+                <div class="nk-testimonial-photo" style="background-image: url('https://fastly.picsum.photos/id/335/150/150.jpg?hmac=UPQYFGkKtfL9bZYsylVOckODwDL5YDUCiBNy89F0dkY');"></div>
+                <div class="nk-testimonial-body">
+                    <em>"Yielding be was which heaven fill fruit. You'll shall doesn't green. His divided they're of won't you isn't void cattle."</em>
+                </div>
+                <div class="nk-testimonial-name h4">{{ users[3].name }}</div>
+                <div class="nk-testimonial-source">Copywriter, Dropbox</div>
+            </blockquote>
+        </div></div>
+        <div><div>
+            <blockquote class="nk-testimonial-2">
+                <div class="nk-testimonial-photo" style="background-image: url('https://fastly.picsum.photos/id/506/150/150.jpg?hmac=_TgNwluLf5jN7Y6EeV226P9SY3FQvlzovpSNk32KtIM');"></div>
+                <div class="nk-testimonial-body">
+                    <em>"God, have rule living creature own the signs. Set herb open, seed wherein god appear shall give lights. Waters to."</em>
+                </div>
+                <div class="nk-testimonial-name h4">{{ users[4].name }}</div>
+                <div class="nk-testimonial-source">Backend Developer, Twitter</div>
+            </blockquote>
+        </div></div>
+    </div>
+</div>
+<div class="nk-gap-2"></div>
+<div class="nk-gap-6"></div>
+{% endblock %}
+
+{% block javascript %}
+    <script type="text/javascript">
+        var tpj=jQuery;
+        var revapi50;
+        tpj(document).ready(function() {
+            if(tpj("#rev_slider_50_1").revolution == undefined){
+                revslider_showDoubleJqueryError("#rev_slider_50_1");
+            }else{
+                revapi50 = tpj("#rev_slider_50_1").show().revolution({
+                    sliderType:"carousel",
+                    jsFileLocation:"assets/vendor/revolution/js/",
+                    sliderLayout:"auto",
+                    dottedOverlay:"none",
+                    delay:9000,
+                    navigation: {
+                        keyboardNavigation:"off",
+                        keyboard_direction: "horizontal",
+                        onHoverStop:"off",
+                    },
+                    carousel: {
+                        maxRotation: 8,
+                        vary_rotation: "off",
+                        minScale: 20,
+                        vary_scale: "off",
+                        horizontal_align: "center",
+                        vertical_align: "center",
+                        fadeout: "off",
+                        vary_fade: "off",
+                        maxVisibleItems: 3,
+                        infinity: "on",
+                        space: -90,
+                        stretch: "off"
+                    },
+                    responsiveLevels:[1240,1024,778,480],
+                    gridwidth:[800,600,400,320],
+                    gridheight:[600,400,320,280],
+                    lazyType:"none",
+                    shadow:0,
+                    spinner:"off",
+                    stopLoop:"on",
+                    stopAfterLoops:0,
+                    stopAtSlide:0,
+                    shuffle:"off",
+                    autoHeight:"off",
+                    fullScreenAlignForce:"off",
+                    fullScreenOffsetContainer: "",
+                    fullScreenOffset: "",
+                    disableProgressBar:"on",
+                    hideThumbsOnMobile:"off",
+                    hideSliderAtLimit:0,
+                    hideCaptionAtLimit:0,
+                    hideAllCaptionAtLilmit:0,
+                    debugMode:false,
+                    fallbacks: {
+                        simplifyAll:"off",
+                        nextSlideOnWindowFocus:"off",
+                        disableFocusListener:false,
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}
