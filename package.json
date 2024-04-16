@@ -162,12 +162,8 @@
             }
         ],
         "production": {
-            "google_analytics": "UA-48958097-5",
-            "protect": [
-                "html.nkdev.info",
-                "You are not permitted to use template without license!",
-                "https://nkdev.info/"
-            ]
+            "google_analytics": false,
+            "protect": false
         },
         "deploy": {
             "zip": {
