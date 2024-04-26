@@ -85,7 +85,7 @@
               }
             }
         },
-        "roadmap.html": {
+        "#leon-roadmap": {
             "name": "Roadmap"
         },
         "#team-container": {
