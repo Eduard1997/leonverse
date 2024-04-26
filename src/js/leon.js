@@ -81,6 +81,7 @@ const Slider = (function () {
             .on('click', '.slide', clickedImage);
     };
     const on = function () {
+        console.log("intra slider");
         $slider = $('.slider');
         $slide = $('.slide');
         sliderWidth = $slider.width();
@@ -96,6 +97,7 @@ const Slider = (function () {
     };
 }());
 $(document).ready(() => {
+    console.log("intra leon");
     Slider.init();
 
     $('.leon-btn-buy.disabled').hover(

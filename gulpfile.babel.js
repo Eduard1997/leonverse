@@ -424,8 +424,6 @@ gulp.task('production', (cb) => {
 gulp.task('deploy', (cb) => {
     process.env.NODE_ENV = process.env.NODE_ENV || 'deploy';
     gulp.series('production', 'move-to-deploy-folder', 'copy-static-files', 'deploy-image-placeholders', 'zip')(cb);
-    return gulp.src('./dist/**/*')
-        .pipe(deploy());
 });
 
 // deploy task: move project to deploy folder
