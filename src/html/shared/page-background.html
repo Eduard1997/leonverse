@@ -12,7 +12,7 @@
         data-video-end-time - video end time in seconds
         data-video-pause-on-page-leave - pause video when the page not in focus (true/false)
 -->
-<div class="nk-page-background op-{{ background.opacity }}{{ (' ' + background.color) | safe if background.color }}" data-video="{{ background.video }}" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true"{{ (' style="background-image: url(\'' + background.image + '\');"') | safe if background.image }}></div>
+<div class="nk-page-background op-{{ background.opacity }}{{ (' ' + background.color) | safe if background.color }}" data-video="mp4:./assets/video/electricity-vortex.mp4" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true"{{ (' style="background-image: url(\'' + background.image + '\');"') | safe if background.image }}></div>
 <!-- END: Page Background -->
 
 <!--

@@ -74,7 +74,7 @@
         "#our-token": {
             "name": "Our Token"
         },
-        "explore-the-universe.html": {
+        "#": {
             "name": "Explore the universe",
             "sub": {
               "#leon-story": {

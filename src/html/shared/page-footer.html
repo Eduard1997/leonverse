@@ -5,7 +5,10 @@
         .nk-footer-parallax-opacity
 -->
 <footer class="nk-footer{{ ' nk-footer-parallax' if footer_parallax }}{{ ' nk-footer-parallax-opacity' if footer_parallax_opacity }}">
+
+    {% if footer_bg %}
     <img class="nk-footer-top-corner" src="assets/images/footer-corner.png" alt="">
+    {% endif %}
 
     {% if footer_bg %}
     <div class="bg-image">
