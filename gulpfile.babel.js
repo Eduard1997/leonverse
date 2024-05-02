@@ -11,7 +11,6 @@ const glob = require('glob');
 const Jimp = require('jimp');
 const $ = require('gulp-load-plugins')();
 const sass = require('gulp-sass')(require('node-sass'));
-const deploy = require('gulp-gh-pages');
 
 const gulpConfig = (() => {
     // template variable

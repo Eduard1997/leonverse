@@ -3,6 +3,11 @@ p.lead.mission {
     min-height: 300px;
 }
 
+/* TODO: only for testing */
+.leon-test-class {
+    height: 1220px !important;
+}
+
 .roadmap-container {
     .main-title {
         width: 100%;
