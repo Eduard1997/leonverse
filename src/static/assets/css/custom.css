@@ -39,8 +39,9 @@ p.lead.mission {
     }
 
     @media screen and (max-width: 768px) {
-        .slide {
-            backdrop-filter: blur(30px);
+        .slide:not(.active) {
+            filter: blur(20px);
+            backdrop-filter: unset;
         }
     }
 

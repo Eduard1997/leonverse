@@ -123,8 +123,14 @@ const Slider = (function () {
                 touchStartTime = new Date().getTime(); // Record start time
             }, false);
 
-            document.addEventListener('touchmove', (event) => {
-                event.preventDefault();
+            document.addEventListener('touchmove', function(event) {
+                // Calculate swipe distance
+                const touch = event.changedTouches[0];
+                const distanceX = touch.pageX - touchStartX;
+                // Only prevent default behavior if swipe distance exceeds a threshold
+                if (Math.abs(distanceX) > swipeThreshold) {
+                    event.preventDefault();
+                }
             }, { passive: false });
 
             document.addEventListener('touchend', (event) => {
