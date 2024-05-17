@@ -17,10 +17,10 @@ const Slider = (function () {
             return -1;
         }
     };
+
     const position = function () {
         let sign;
-        const half = $('.slide.active')
-            .index();
+        const half = $('.slide.active').index();
         let x = 0;
         let z = 0;
         let zindex;
@@ -50,14 +50,11 @@ const Slider = (function () {
                 scaleX = scaleY = 1.2;
                 transformOrigin = 'initial';
             }
-            $(element)
-                .css(
-                    {
-                        transform: `translate3d(${calculateX(x, sign, 300)}px, 0,${z}px) scale3d(${scaleX},${scaleY}, 1)`,
-                        'z-index': zindex,
-                        'transform-origin-x': transformOrigin,
-                    },
-                );
+            $(element).css({
+                transform: `translate3d(${calculateX(x, sign, 300)}px, 0,${z}px) scale3d(${scaleX},${scaleY}, 1)`,
+                'z-index': zindex,
+                'transform-origin-x': transformOrigin,
+            });
         });
     };
 
@@ -67,21 +64,17 @@ const Slider = (function () {
     };
 
     const clickedImage = function () {
-        $('.active')
-            .removeClass('active');
-        $(this)
-            .addClass('active');
+        $('.active').removeClass('active');
+        $(this).addClass('active');
         position();
     };
 
     const addEvents = function () {
-        $(window)
-            .resize(recalculateSizes);
-        $(document)
-            .on('click', '.slide', clickedImage);
+        $(window).resize(recalculateSizes);
+        $(document).on('click', '.slide', clickedImage);
     };
+
     const on = function () {
-        console.log("intra slider");
         $slider = $('.slider');
         $slide = $('.slide');
         sliderWidth = $slider.width();
@@ -89,15 +82,71 @@ const Slider = (function () {
         position();
     };
 
+    const nextSlide = function () {
+        const $active = $('.slide.active');
+        let $next = $active.next('.slide');
+        if ($next.length === 0) {
+            $next = $slide.first();
+        }
+        $active.removeClass('active');
+        $next.addClass('active');
+        position();
+    };
+
+    const previousSlide = function () {
+        const $active = $('.slide.active');
+        let $prev = $active.prev('.slide');
+        if ($prev.length === 0) {
+            $prev = $slide.last();
+        }
+        $active.removeClass('active');
+        $prev.addClass('active');
+        position();
+    };
+
     return {
         init() {
             on();
             addEvents();
+
+            // Swipe detection
+            const swipeThreshold = 100; // Minimum distance (in pixels) for a swipe to be detected
+            const allowedTime = 300; // Maximum time (in ms) for a valid swipe
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchStartTime = 0;
+
+            document.addEventListener('touchstart', (event) => {
+                const touch = event.changedTouches[0];
+                touchStartX = touch.pageX;
+                touchStartTime = new Date().getTime(); // Record start time
+            }, false);
+
+            document.addEventListener('touchmove', (event) => {
+                event.preventDefault();
+            }, { passive: false });
+
+            document.addEventListener('touchend', (event) => {
+                const touch = event.changedTouches[0];
+                touchEndX = touch.pageX;
+                const elapsedTime = new Date().getTime() - touchStartTime; // Calculate the elapsed time
+
+                if (elapsedTime <= allowedTime) {
+                    const distanceX = touchEndX - touchStartX;
+                    if (Math.abs(distanceX) >= swipeThreshold) {
+                        if (distanceX > 0) {
+                            previousSlide(); // Swipe right - show previous slide
+                        } else {
+                            nextSlide(); // Swipe left - show next slide
+                        }
+                    }
+                }
+            }, false);
         },
     };
 }());
 $(document).ready(() => {
-    console.log("intra leon");
     Slider.init();
 
     $('.leon-btn-buy.disabled').hover(

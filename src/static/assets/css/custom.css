@@ -38,6 +38,19 @@ p.lead.mission {
         backdrop-filter: blur(10px);
     }
 
+    @media screen and (max-width: 768px) {
+        .slide {
+            backdrop-filter: blur(30px);
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+        .slide.active {
+            width: 250px;
+            margin-left: 7%;
+        }
+    }
+
     .slide-container{
         padding: 20px 30px;
     }
@@ -53,11 +66,5 @@ p.lead.mission {
 
     .slide.active {
         z-index: 4;
-    }
-
-    @media screen and (max-width: 545px) {
-        .slide:not(.active) {
-            margin-top: 200px;
-        }
     }
 }

@@ -38,7 +38,7 @@
     "nav_logo_size": 90,
     "nav_fixed": false,
     "nav_sticky": true,
-    "nav_autohide": false,
+    "nav_autohide": true,
     "nav_transparent": false,
     "nav_mobile": true,
     "nav_align": "left",
