@@ -62,7 +62,7 @@
     "side_buttons_visible": true,
     "background": {
         "video": "https://youtu.be/UkeDo1LhUqQ",
-        "image": "assets/images/page-background.jpg",
+        "image": null,
         "opacity": 5,
         "color": false,
         "audio": "assets/mp3/purpleplanetmusic-desolation.mp3"
