@@ -69,3 +69,13 @@ p.lead.mission {
         z-index: 4;
     }
 }
+
+.leon-story-container {
+    background-image: url("../images/blue_grizzly.jpg");
+    background-size: cover;
+}
+
+.our-token-container {
+    background-image: url("../images/blue_grizzly.jpg");
+    background-size: cover;
+}
