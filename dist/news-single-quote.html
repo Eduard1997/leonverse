@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<!--
+    Name: Godlike - Gaming HTML Template
+    Version: 2.4.4
+    Author: nK
+    Website: https://nkdev.info/
+    Purchase: https://1.envato.market/godlike-html-info
+    Support: https://nk.ticksy.com/
+    License: You must have a valid license purchased only from ThemeForest (the above link) in order to legally use the theme for your project.
+    Copyright 2024.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="_nK">
+        <title>LeonVerse | Blockquote Blog Post</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <!-- START: Styles -->
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,400i,700%7cMarcellus+SC" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="assets/vendor/bootstrap/dist/css/bootstrap.min.css">
+        <!-- FontAwesome -->
+        <script defer src="assets/vendor/fontawesome-free/js/all.js"></script>
+        <script defer src="assets/vendor/fontawesome-free/js/v4-shims.js"></script>
+        <!-- IonIcons -->
+        <link rel="stylesheet" href="assets/vendor/ionicons/css/ionicons.min.css">
+        <!-- Revolution Slider -->
+        <link rel="stylesheet" href="assets/vendor/revolution/css/settings.css">
+        <link rel="stylesheet" href="assets/vendor/revolution/css/layers.css">
+        <link rel="stylesheet" href="assets/vendor/revolution/css/navigation.css">
+        <!-- Flickity -->
+        <link rel="stylesheet" href="assets/vendor/flickity/dist/flickity.min.css">
+        <!-- Photoswipe -->
+        <link rel="stylesheet" href="assets/vendor/photoswipe/dist/photoswipe.css">
+        <link rel="stylesheet" href="assets/vendor/photoswipe/dist/default-skin/default-skin.css">
+        <!-- DateTimePicker -->
+        <link rel="stylesheet" href="assets/vendor/jquery-datetimepicker/build/jquery.datetimepicker.min.css">
+        <!-- Summernote -->
+        <link rel="stylesheet" href="assets/vendor/summernote/dist/summernote-bs4.css">
+        <!-- GODLIKE -->
+        <link rel="stylesheet" href="assets/css/godlike.css">
+        <!-- Custom Styles -->
+        <link rel="stylesheet" href="assets/css/custom.css">
+        <!-- END: Styles -->
+        <!-- jQuery -->
+        <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+    </head>
+    <!--
+    Additional Classes:
+        .nk-page-boxed
+-->
+    <body>
+        <!-- START: Page Preloader -->
+        <div class="nk-preloader">
+            <!--
+         Preloader animation
+         data-close-... data used for closing preloader
+         data-open-...  data used for opening preloader
+    -->
+            <div class="nk-preloader-bg" style="background-color: #000;" data-close-frames="23" data-close-speed="1.2" data-close-sprites="./assets/images/preloader-bg.png" data-open-frames="23" data-open-speed="1.2" data-open-sprites="./assets/images/preloader-bg-bw.png">
+            </div>
+            <div class="nk-preloader-content">
+                <div>
+                    <img class="nk-img" src="assets/images/godlike_logo_final.png" alt="LeonVerse" width="500">
+                    <div class="nk-preloader-animation"></div>
+                </div>
+            </div>
+            <div class="nk-preloader-skip">Skip</div>
+        </div>
+        <!-- END: Page Preloader -->
+        <!--
+    START: Page Video Background
+
+    Additional Attributes:
+        data-video - Youtube/Vimeo/self-hosted video urls.
+            self-hosted video example:
+            data-video="mp4:./video/local-video.mp4,webm:./video/local-video.webm,ogv:./video/local-video.ogv"
+        data-video-loop - loop video (true/false)
+        data-video-mute - mute video music (true/false)
+        data-video-volume - volume of video music (0-100)
+        data-video-start-time - video start time in seconds
+        data-video-end-time - video end time in seconds
+        data-video-pause-on-page-leave - pause video when the page not in focus (true/false)
+-->
+        <div class="nk-page-background op-5" data-video="mp4:./assets/video/electricity-vortex.mp4" data-video-loop="true" data-video-mute="true" data-video-volume="0" data-video-start-time="0" data-video-end-time="0" data-video-pause-on-page-leave="true"></div>
+        <!-- END: Page Background -->
+        <!--
+    START: Page Audio Background
+
+    Additional Attributes:
+        data-audio - URL to audio file
+        data-audio-volume - audio volume (0-100)
+        data-audio-autoplay - autoplay audio (true/false)
+        data-audio-loop - loop audio (true/false)
+        data-audio-pause-on-page-leave - pause video when the page not in focus (true/false)
+-->
+        <div class="nk-page-background-audio d-none" data-audio="assets/mp3/purpleplanetmusic-desolation.mp3" data-audio-volume="100" data-audio-autoplay="true" data-audio-loop="true" data-audio-pause-on-page-leave="true"></div>
+        <!-- END: Page Background -->
+        <!--
+    Additional Classes:
+        .nk-header-opaque
+-->
+        <header class="nk-header nk-header-opaque">
+            <!--
+        START: Navbar
+
+        Additional Classes:
+            .nk-navbar-sticky
+            .nk-navbar-transparent
+            .nk-navbar-autohide
+            .nk-navbar-light
+            .nk-navbar-no-link-effect
+    -->
+            <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-autohide">
+                <div class="container-fluid">
+                    <div class="nk-nav-table leon-nav">
+                        <a href="index.html" class="nk-nav-logo">
+                            <img src="assets/images/godlike_logo_final.png" alt="" width="90">
+                        </a>
+                        <ul class="nk-nav nk-nav-left d-none d-lg-block" data-nav-mobile="#nk-nav-mobile">
+                            <li class="nav-menu-item   ">
+                                <a href="index.html"> Home</a>
+                            </li>
+                            <li class="nav-menu-item   ">
+                                <a href="#our-token"> Our Token</a>
+                            </li>
+                            <li class="nav-menu-item   nk-drop-item">
+                                <a href="#"> Explore the universe</a>
+                                <ul class="dropdown">
+                                    <li class="nav-menu-item   ">
+                                        <a href="#leon-story"> Story</a>
+                                    </li>
+                                    <li class="nav-menu-item   ">
+                                        <a href="full_lore.html"> Full Lore</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-menu-item   ">
+                                <a href="#leon-roadmap"> Roadmap</a>
+                            </li>
+                            <li class="nav-menu-item   ">
+                                <a href="#team-container"> Team</a>
+                            </li>
+                            <li class="nav-menu-item   ">
+                                <a href="how-to-buy.html"> How to buy</a>
+                            </li>
+                            <li class="nav-menu-item   ">
+                                <a href="whitepaper.html"> Whitepaper</a>
+                            </li>
+                        </ul>
+                        <ul class="nk-nav nk-nav-right nk-nav-icons">
+                            <li class="single-icon d-lg-none">
+                                <a href="#" class="no-link-effect" data-nav-toggle="#nk-nav-mobile">
+                                    <span class="nk-icon-burger">
+                                        <span class="nk-t-1"></span>
+                                        <span class="nk-t-2"></span>
+                                        <span class="nk-t-3"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- END: Navbar -->
+        </header>
+        <!--
+    START: Navbar Mobile
+
+    Additional Classes:
+        .nk-navbar-left-side
+        .nk-navbar-right-side
+        .nk-navbar-lg
+        .nk-navbar-overlay-content
+        .nk-navbar-light
+        .nk-navbar-no-link-effect
+-->
+        <div id="nk-nav-mobile" class="nk-navbar nk-navbar-side nk-navbar-left-side nk-navbar-overlay-content d-lg-none">
+            <div class="nano">
+                <div class="nano-content">
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="assets/images/godlike_logo_final.png" alt="" width="90">
+                    </a>
+                    <div class="nk-navbar-mobile-content">
+                        <ul class="nk-nav">
+                            <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Navbar Mobile -->
+        <div class="nk-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="nk-gap-3"></div>
+                        <!-- START: Post -->
+                        <div class="nk-blog-post nk-blog-post-single">
+                            <blockquote class="nk-blockquote nk-blockquote-styled mt-0 mb-0">
+                                <div class="bg-image op-6">
+                                    <img src="assets/images/post-3-mid.jpg" alt="" class="jarallax-img">
+                                </div>
+                                <a class="nk-blockquote-cont" href="news-single-quote.html">
+                                    <div class="nk-blockquote-icon">“</div>
+                                    <em>The clearest way into the Universe is through a forest wilderness.</em>
+                                    <div class="nk-blockquote-author">John Muir</div>
+                                </a>
+                            </blockquote>
+                            <!-- START: Post Text -->
+                            <div class="nk-post-text mt-0">
+                                <p>Were you seas fruitful seas under were deep that he every replenish grass creepeth to under saw own stars night you're cattle gathering gathered which fish seasons female there said, seas sea. Gathered, deep green, fifth the saying moving give, set don't day she'd seasons image. Given it doesn't midst first over, abundantly seed appear fish. Great two a yielding brought. Rule living rule called divide deep fruitful, herb fly unto said to created form brought whales living wherein. Deep have man fill creeping you'll replenish you'll beast dry meat. Firmament fly, divided in their have created deep.</p>
+                                <blockquote class="nk-blockquote">
+                                    <div class="nk-blockquote-icon">“</div>
+                                    <em>Creature dry face appear it had gathered earth seasons blessed Don't. Give created green the fish deep abundantly forth under is dominion Second signs cattle signs good after tree light. Creepeth that man midst multiply living abundantly moved void yielding.</em>
+                                    <div class="nk-blockquote-author">Ben Rodriquez</div>
+                                </blockquote>
+                                <p>Heaven also rule it land earth also creepeth man. Green. Them. Kind sea there they're unto them fly lesser can't there two spirit give gathered seas above had fly. Very firmament fly hath waters beginning lesser. Cattle void signs heaven subdue third herb moving upon open. Dry divided, shall, good his hath day creepeth saw one. Set together sea likeness seed fish so. Greater fifth moved bearing.</p>
+                                <p>Gathering him. Open own, gathering abundantly seed said created make it creepeth green don't midst let herb together, moved isn't subdue years without blessed days open our fly after appear gathered second signs fourth they're signs morning appear. There can't two let. Female land tree spirit living brought god. Fowl Second. Great divided. Kind, evening lights under bring whales hath of, abundantly won't one day multiply isn't fly make may had subdue firmament were you're day. Man seasons sixth face winged. God meat rule together tree.</p>
+                                <!-- START: Post Meta -->
+                                <div class="nk-post-tags"> Tags: &nbsp; <a href="#">Image</a>
+                                    <a href="#">Demonstrate</a>
+                                    <a href="#">Tags</a>
+                                </div>
+                                <!-- END: Post Meta -->
+                            </div>
+                            <!-- END: Post Text -->
+                            <!-- START: Post Author -->
+                            <div class="nk-post-author">
+                                <div class="nk-post-author-photo">
+                                    <a href="#"><img src="assets/images/avatar-1.jpg" alt=""></a>
+                                </div>
+                                <h4 class="nk-post-author-name h5"><a href="#">Lesa Cruz</a></h4>
+                                <div class="nk-post-author-info"> Said air of given appear open saying which of. Make all fish. Given own So, without grass god. Day beast open second without have. Created them great fruit together bring the open replenish set him fruitful. </div>
+                            </div>
+                            <!-- END: Post Author -->
+                            <!-- START: Comments -->
+                            <div class="nk-comments" id="comments">
+                                <h3 class="nk-title h4 text-center">4 Comments</h3>
+                                <div class="nk-gap-2"></div>
+                                <!-- START: Comment -->
+                                <div class="nk-comment">
+                                    <div class="nk-comment-avatar">
+                                        <a href="#"><img src="assets/images/avatar-2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="nk-comment-meta">
+                                        <div class="nk-comment-name h5"><a href="#">Kurt Tucker</a></div>
+                                        <div class="nk-comment-date">20 September, 2017</div>
+                                    </div>
+                                    <p>Of. Lesser it good moved tree under living male under day The evening. Waters creeping gathered give also grass beginning.</p>
+                                    <div class="text-right">
+                                        <span class="nk-action-heart liked">
+                                            <span class="like-icon ion-android-favorite-outline"></span>
+                                            <span class="liked-icon ion-android-favorite"></span>
+                                            <span class="num">14</span>
+                                        </span>
+                                        <div class="nk-comment-reply"><a href="#"><i class="ion-reply"></i> Reply</a></div>
+                                    </div>
+                                    <!-- START: Comment -->
+                                    <div class="nk-comment">
+                                        <div class="nk-comment-avatar">
+                                            <a href="#"><img src="assets/images/avatar-1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="nk-comment-meta">
+                                            <div class="nk-comment-name h5"><a href="#">Lesa Cruz</a></div>
+                                            <div class="nk-comment-date">20 September, 2017</div>
+                                        </div>
+                                        <p>Fourth give grass creature. Whose fowl. His which male which yielding fly won't creature after beast male. Itself. Life heaven whales over given fly whales lesser, day winged one after.</p>
+                                        <div class="text-right">
+                                            <span class="nk-action-heart">
+                                                <span class="like-icon ion-android-favorite-outline"></span>
+                                                <span class="liked-icon ion-android-favorite"></span>
+                                                <span class="num">3</span>
+                                            </span>
+                                            <div class="nk-comment-reply"><a href="#"><i class="ion-reply"></i> Reply</a></div>
+                                        </div>
+                                        <!-- START: Comment -->
+                                        <div class="nk-comment">
+                                            <div class="nk-comment-avatar">
+                                                <a href="#"><img src="assets/images/avatar-3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="nk-comment-meta">
+                                                <div class="nk-comment-name h5"><a href="#">Katie Anderson</a></div>
+                                                <div class="nk-comment-date">21 September, 2017</div>
+                                            </div>
+                                            <p>Given signs fifth female air and second face earth one is. Whose greater behold had after he whales forth cattle Thing said kind after his.</p>
+                                            <p>Male upon thing had us hath doesn't great male fifth us. Every whales own given open upon divided life i which blessed subdue moving give.</p>
+                                            <div class="text-right">
+                                                <span class="nk-action-heart">
+                                                    <span class="like-icon ion-android-favorite-outline"></span>
+                                                    <span class="liked-icon ion-android-favorite"></span>
+                                                    <span class="num">0</span>
+                                                </span>
+                                                <div class="nk-comment-reply"><a href="#"><i class="ion-reply"></i> Reply</a></div>
+                                            </div>
+                                        </div>
+                                        <!-- END: Comment -->
+                                    </div>
+                                    <!-- END: Comment -->
+                                </div>
+                                <!-- END: Comment -->
+                                <!-- START: Comment -->
+                                <div class="nk-comment">
+                                    <div class="nk-comment-avatar">
+                                        <a href="#"><img src="assets/images/avatar-4.jpg" alt=""></a>
+                                    </div>
+                                    <div class="nk-comment-meta">
+                                        <div class="nk-comment-name h5"><a href="#">Luke Fuller</a></div>
+                                        <div class="nk-comment-date">21 September, 2017</div>
+                                    </div>
+                                    <p>To set. Lights likeness after, stars void in doesn't subdue.</p>
+                                    <div class="text-right">
+                                        <span class="nk-action-heart liked">
+                                            <span class="like-icon ion-android-favorite-outline"></span>
+                                            <span class="liked-icon ion-android-favorite"></span>
+                                            <span class="num">1</span>
+                                        </span>
+                                        <div class="nk-comment-reply"><a href="#"><i class="ion-reply"></i> Reply</a></div>
+                                    </div>
+                                </div>
+                                <!-- END: Comment -->
+                                <!-- START: Reply -->
+                                <div class="nk-reply">
+                                    <h3 class="nk-title h4 text-center">Post your comment</h3>
+                                    <div class="nk-gap-2"></div>
+                                    <form action="#" class="nk-form nk-form-style-1" novalidate="novalidate">
+                                        <div class="row vertical-gap">
+                                            <div class="col-md-4">
+                                                <input type="email" class="form-control required" name="email" placeholder="Email *">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control required" name="name" placeholder="Name *">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" name="name" placeholder="Website">
+                                            </div>
+                                        </div>
+                                        <div class="nk-gap-1"></div>
+                                        <textarea class="form-control required" name="message" rows="5" placeholder="Message *" aria-required="true"></textarea>
+                                        <div class="nk-gap-1"></div>
+                                        <div class="nk-form-response-success"></div>
+                                        <div class="nk-form-response-error"></div>
+                                        <button class="nk-btn nk-btn-lg link-effect-4">Post comment</button>
+                                    </form>
+                                </div>
+                                <!-- END: Reply -->
+                            </div>
+                            <!-- END: Comments -->
+                        </div>
+                        <!-- END: Post -->
+                        <div class="nk-gap-4"></div>
+                    </div>
+                    <div class="col-lg-4">
+                        <!--
+                    START: Sidebar
+
+                    Additional Classes:
+                        .nk-sidebar-left
+                        .nk-sidebar-right
+                        .nk-sidebar-sticky
+                -->
+                        <aside class="nk-sidebar nk-sidebar-right nk-sidebar-sticky">
+                            <div class="nk-gap-5"></div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Published:</strong> &nbsp;&nbsp;&nbsp;</td>
+                                        <td>August 27, 2016</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Category:</strong> &nbsp;&nbsp;&nbsp;</td>
+                                        <td><a href="#">Beta Test</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Written by:</strong> &nbsp;&nbsp;&nbsp;</td>
+                                        <td><a href="#">nK</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Views:</strong> &nbsp;&nbsp;&nbsp;</td>
+                                        <td>1290</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Comments:</strong> &nbsp;&nbsp;&nbsp;</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Likes:</strong> &nbsp;&nbsp;</td>
+                                        <td>
+                                            <span class="nk-action-heart">
+                                                <span class="num">9</span>
+                                                <span class="like-icon ion-android-favorite-outline"></span>
+                                                <span class="liked-icon ion-android-favorite"></span>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="nk-gap-4"></div>
+                            <div class="nk-widget">
+                                <h4 class="nk-widget-title">Recent Posts</h4>
+                                <div>
+                                    <div class="nk-widget-post">
+                                        <a href="news-single-image.html" class="nk-image-box-1 nk-post-image">
+                                            <img src="assets/images/post-1-sm.jpg" alt="">
+                                        </a>
+                                        <h3 class="nk-post-title"><a href="news-single-image.html">Image Blog Post</a></h3>
+                                        <div class="nk-post-meta-date">September 18, 2016</div>
+                                    </div>
+                                    <div class="nk-widget-post">
+                                        <a href="news-single-video.html" class="nk-image-box-1 nk-post-image">
+                                            <img src="assets/images/post-2-sm.jpg" alt="">
+                                        </a>
+                                        <h3 class="nk-post-title"><a href="news-single-video.html">Video Blog Post</a></h3>
+                                        <div class="nk-post-meta-date">September 5, 2016</div>
+                                    </div>
+                                    <div class="nk-widget-post">
+                                        <a href="news-single-quote.html" class="nk-image-box-1 nk-post-image">
+                                            <img src="assets/images/post-3-sm.jpg" alt="">
+                                        </a>
+                                        <h3 class="nk-post-title"><a href="news-single-quote.html">Blockquote Blog Post</a></h3>
+                                        <div class="nk-post-meta-date">August 27, 2016</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-widget">
+                                <h4 class="nk-widget-title">Categories</h4>
+                                <div>
+                                    <ul class="nk-widget-categories">
+                                        <li>
+                                            <a href="#">Business</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Live News</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Lifestyle</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="nk-widget">
+                                <h4 class="nk-widget-title">Tags</h4>
+                                <div>
+                                    <div class="nk-widget-tags">
+                                        <a href="#">Creative</a>
+                                        <a href="#">Responsive</a>
+                                        <a href="#">Design</a>
+                                        <a href="#">Bootstrap</a>
+                                        <a href="#">Multi-Concept</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nk-widget">
+                                <h4 class="nk-widget-title">Twitter</h4>
+                                <div>
+                                    <div class="nk-twitter-list" data-twitter-count="2"></div>
+                                </div>
+                            </div>
+                            <div class="nk-gap-4"></div>
+                        </aside>
+                        <!-- END: Sidebar -->
+                    </div>
+                </div>
+                <div class="nk-gap-4"></div>
+                <div class="nk-gap-3"></div>
+            </div>
+            <!-- START: Footer -->
+            <!--
+    Additional Classes:
+        .nk-footer-parallax
+        .nk-footer-parallax-opacity
+-->
+            <footer class="nk-footer nk-footer-parallax nk-footer-parallax-opacity">
+                <div class="container">
+                    <div class="nk-gap-2"></div>
+                    <p> &copy; 2020 nK Group Inc. Developed in association with LoremInc. IpsumCompany, SitAmmetGroup, CumSit and related logos are registered trademarks. Godlike and related logos are registered trademarks or trademarks of id Software LLC in the U.S. and/or other countries. All other trademarks or trade names are the property of their respective owners. All Rights Reserved. </p>
+                    <p> Godlike &reg;: The Darkness&trade; is a fowl beginning there Over had moveth so land wherein, fruit very gathering of, female creepeth. Dominion above sea gathered unto whales. Subdue to, have Life fowl firmament wherein. Great air without for, great him he That let earth together thing sea fly gathering. Air whose. Green in face tree to spirit life. Place stars. It two. Deep seed man isn't third. Own he is may had darkness waters you'll forth fifth their don't also fruitful be years in spirit to tree. Sixth fourth open female. </p>
+                    <div class="nk-footer-links">
+                        <a href="#" class="link-effect">Terms of Service</a> <span>|</span> <a href="#" class="link-effect">Privacy Policy</a>
+                    </div>
+                    <div class="nk-gap-4"></div>
+                </div>
+            </footer>
+            <!-- END: Footer -->
+        </div>
+        <!--
+    START: Share Buttons
+        .nk-share-buttons-left
+-->
+        <div class="nk-share-buttons nk-share-buttons-left d-none d-md-flex">
+            <ul>
+                <li>
+                    <span class="nk-share-icon" title="Share page on Twitter" data-share="twitter">
+                        <span class="fa-brands fa-x-twitter"></span>
+                    </span>
+                    <span class="nk-share-name">Twitter</span>
+                </li>
+                <li>
+                    <span class="nk-share-icon" title="Share page on Telegram" data-share="Telegram">
+                        <span class="fa-brands fa-telegram"></span>
+                    </span>
+                    <span class="nk-share-name">Telegram</span>
+                </li>
+                <li>
+                    <span class="nk-share-icon" title="Share page on Discord" data-share="Discord">
+                        <span class="fa-brands fa-discord"></span>
+                    </span>
+                    <span class="nk-share-name">Discord</span>
+                </li>
+                <li>
+                    <span class="nk-share-icon" title="Share page on Reddit" data-share="Reddit">
+                        <span class="fa-brands fa-reddit"></span>
+                    </span>
+                    <span class="nk-share-name">Reddit</span>
+                </li>
+                <!--
+        <li>
+            <span class="nk-share-icon" title="Share page on Pinterest" data-share="pinterest">
+                <span class="icon fa fa-pinterest"></span>
+            </span>
+            <span class="nk-share-name">Pinterest</span>
+        </li>
+        <li>
+            <span class="nk-share-icon" title="Share page on LinkedIn" data-share="linkedin">
+                <span class="icon fa fa-linkedin"></span>
+            </span>
+            <span class="nk-share-name">LinkedIn</span>
+        </li>
+        <li>
+            <span class="nk-share-icon" title="Share page on VK" data-share="vk">
+                <span class="icon fa fa-vk"></span>
+            </span>
+            <span class="nk-share-name">Vkontakte</span>
+        </li>
+        -->
+            </ul>
+        </div>
+        <!--
+    START: Side Buttons
+        .nk-side-buttons-visible
+-->
+        <!-- END: Side Buttons -->
+        <!-- START: Scripts -->
+        <!-- Object Fit Polyfill -->
+        <script src="assets/vendor/object-fit-images/dist/ofi.min.js"></script>
+        <!-- GSAP -->
+        <script src="assets/vendor/gsap/dist/gsap.min.js"></script>
+        <script src="assets/vendor/gsap/dist/ScrollToPlugin.min.js"></script>
+        <!-- Popper -->
+        <script src="assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Sticky Kit -->
+        <script src="assets/vendor/sticky-kit/dist/sticky-kit.min.js"></script>
+        <!-- Jarallax -->
+        <script src="assets/vendor/jarallax/dist/jarallax.min.js"></script>
+        <script src="assets/vendor/jarallax/dist/jarallax-video.min.js"></script>
+        <!-- imagesLoaded -->
+        <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <!-- Flickity -->
+        <script src="assets/vendor/flickity/dist/flickity.pkgd.min.js"></script>
+        <!-- Isotope -->
+        <script src="assets/vendor/isotope-layout/dist/isotope.pkgd.min.js"></script>
+        <!-- Photoswipe -->
+        <script src="assets/vendor/photoswipe/dist/photoswipe.min.js"></script>
+        <script src="assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+        <!-- Typed.js -->
+        <script src="assets/vendor/typed.js/lib/typed.min.js"></script>
+        <!-- Jquery Validation -->
+        <script src="assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+        <!-- Jquery Countdown + Moment -->
+        <script src="assets/vendor/jquery-countdown/dist/jquery.countdown.min.js"></script>
+        <script src="assets/vendor/moment/min/moment.min.js"></script>
+        <script src="assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
+        <!-- Hammer.js -->
+        <script src="assets/vendor/hammerjs/hammer.min.js"></script>
+        <!-- NanoSroller -->
+        <script src="assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js"></script>
+        <!-- SoundManager2 -->
+        <script src="assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js"></script>
+        <!-- DateTimePicker -->
+        <script src="assets/vendor/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
+        <!-- Revolution Slider -->
+        <script src="assets/vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="assets/vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script src="assets/vendor/revolution/js/extensions/revolution.extension.video.min.js"></script>
+        <script src="assets/vendor/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script src="assets/vendor/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <!-- Keymaster -->
+        <script src="assets/vendor/keymaster/keymaster.js"></script>
+        <!-- Summernote -->
+        <script src="assets/vendor/summernote/dist/summernote-bs4.min.js"></script>
+        <!-- GODLIKE -->
+        <script src="assets/js/godlike.min.js"></script>
+        <script src="assets/js/godlike-init.js"></script>
+        <script src="assets/js/leon.js"></script>
+        <!-- END: Scripts -->
+    </body>
+</html>
