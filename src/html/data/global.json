@@ -22,7 +22,7 @@
     "header_video": false,
     "header_video_thumb": false,
     "header_video_type": "full",
-    "header_size": "md",
+    "header_size": "xl",
     "header_class": false,
     "nav": "top",
     "nav_opaque": true,
