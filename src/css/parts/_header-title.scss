@@ -7,6 +7,7 @@
     color: #fff;
     text-align: center;
     background-color: $color_dark_1;
+    align-items: center;
 
     // we can use z-index: 1, but in Edge header will be above overlayed blocks, for example in new-single-video
     // if we use z-index: 2, then in all browsers headers will overlay this blocks
