@@ -60,6 +60,10 @@ h6,
 .nk-title {
     position: relative;
     z-index: 1;
+
+    @media screen and (max-width: 425px) {
+      font-size: 2rem;
+    }
 }
 
 /* Sub Title */
