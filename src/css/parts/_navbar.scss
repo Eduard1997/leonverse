@@ -7,7 +7,7 @@
     z-index: 1000;
 
     &.nk-header-opaque {
-        position: relative;
+        /*position: relative;*/
     }
 }
 
@@ -139,6 +139,10 @@
     z-index: 1000;
     will-change: background-color;
 
+    &.leon-nav-scroll {
+      background-color: #000000bd !important;
+    }
+
     // fixed position
     &.nk-navbar-fixed {
         position: fixed;
@@ -180,7 +184,7 @@
         background-color: rgba($color_dark_1, .75);
     }
     .nk-header-opaque & {
-        background-color: $color_dark_1;
+        background-color: transparent;
         box-shadow: 0 5px 15px 0 rgba(#000, .5);
     }
 

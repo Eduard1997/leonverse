@@ -155,12 +155,12 @@ const Slider = (function () {
 $(document).ready(() => {
     Slider.init();
 
-    $('.leon-btn-buy.disabled').hover(
+    $('.leon-btn-whitepaper.disabled').hover(
         function () {
             $(this).find('span.text-content').text('Coming Soon');
         },
         function () {
-            $(this).find('span.text-content').text('Buy $Leon');
+            $(this).find('span.text-content').text('Whitepaper');
         },
     );
 
@@ -170,6 +170,15 @@ $(document).ready(() => {
         },
         function () {
             $(this).find('span.text-content').text('Trailer');
+        },
+    );
+
+    $('.leon-btn-audit.disabled').hover(
+        function () {
+            $(this).find('span.text-content').text('Coming Soon');
+        },
+        function () {
+            $(this).find('span.text-content').text('Audit');
         },
     );
 

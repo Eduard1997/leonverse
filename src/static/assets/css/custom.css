@@ -28,7 +28,7 @@ p.lead.mission {
         width: 400px;
         margin-left: -50px;
         color: #fff;
-        background-image: linear-gradient(#0200546b, #0000006b), linear-gradient(to right, #661dee73, #009dff75);
+        background: linear-gradient(90deg, rgb(79 79 79 / 100%) 0%, rgb(46 46 50 / 100%) 50%, rgb(12 7 7 / 100%) 100%);
         background-clip: content-box, border-box;
         background-origin: border-box;
         border: double 1px transparent;
@@ -79,3 +79,213 @@ p.lead.mission {
     background-image: url("../images/blue_grizzly.jpg");
     background-size: cover;
 }
+
+.video-container {
+    position: relative;
+
+    .background-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        min-width: 100%;
+        height: auto;
+        min-height: 100%;
+        background-size: cover;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+}
+
+.nav-buy-leon {
+    float: right;
+    width: 140px;
+    background: linear-gradient(345deg, rgb(68 138 175 / 100%) 49%, rgb(219 113 14 / 100%) 78%);
+    border-radius: 100px;
+
+    &.leon-marketplace {
+        margin-left: 20px;
+    }
+}
+
+.leon-btn-top {
+    min-width: 200px;
+    margin-left: 15px;
+    line-height: 25px;
+    border-radius: 100px;
+
+    &.leon-btn-whitepaper {
+        background: linear-gradient(90deg, rgb(9 182 212 / 100%) 0%, rgb(9 182 212 / 100%) 39%, rgb(183 85 2 / 100%) 59%);
+    }
+
+    &.leon-btn-audit,
+    &.leon-btn-trailer {
+        background: transparent;
+    }
+
+    &.disabled:focus {
+        color: #e08821;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+        opacity: .8;
+    }
+
+    @media screen and (max-width: 375px) {
+        padding: 10px 14px;
+    }
+}
+
+.leon-footer {
+    background-image: url("../images/points-bg.png") !important;
+}
+
+.leon-tokenomics-table {
+    padding: 28px;
+    background: rgb(31 41 55 / 50%);
+    border: .5px solid rgb(255 255 255 / 40%);
+    border-radius: 24px;
+    backdrop-filter: blur(3px);
+}
+
+.card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: rgb(66, 66, 66);
+
+    .card-item {
+        display: flex;
+        align-items: center;
+    }
+
+    .card-item:nth-child(2) {
+        min-width: 50px;
+    }
+
+    &.card-title {
+        background: transparent !important;
+        border-bottom: 1px solid rgb(75 94 117 / 15%);
+    }
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.wd-35 {
+    width: 35%;
+}
+
+.dot {
+    min-width: 15px;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-right: 8px;
+
+    &.bgcolor-1 {
+        background: rgb(114, 232, 255);
+    }
+
+    &.bgcolor-2 {
+        background: rgb(0, 194, 255);
+    }
+
+    &.bgcolor-3 {
+        background: rgb(72, 141, 255);
+    }
+
+    &.bgcolor-4 {
+        background: rgb(78, 87, 255);
+    }
+
+    &.bgcolor-5 {
+        background: rgb(157, 97, 255);
+    }
+
+    &.bgcolor-6 {
+        background: rgb(231, 127, 255);
+    }
+
+    &.bgcolor-7 {
+        background: rgb(225, 84, 177);
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .wd-sm-30 {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .card-row .card-item:nth-child(1) {
+        min-width: 230px;
+    }
+    .card-title .card-item:nth-child(1) {
+        min-width: 197px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .nav-buy-leon {
+        float: left;
+        margin-left: 20px;
+
+        &.leon-marketplace {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .leon-tokenomics-table {
+        font-size: 10px;
+    }
+
+    .tokenomics-title {
+        font-size: 10px;
+    }
+
+    .card-title.card-row .card-item:nth-child(1) {
+        min-width: 50px;
+    }
+
+    .card-row .card-item:nth-child(1) {
+        min-width: 120px;
+    }
+
+    .leon-btn-top {
+        font-size: 15px;
+        line-height: 15px;
+        min-width: 15px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .nk-title.display-3 {
+        font-size: 20px;
+    }
+
+    .nk-nav-logo img {
+        max-width: 100px;
+    }
+
+    .nk-share-buttons.nk-share-buttons-left{
+        top: 20px;
+        left: -10px;
+    }
+
+    .leon-btn-top {
+        margin-top: 33px;
+        font-size: 10px;
+        line-height: 10px;
+        min-width: 10px;
+    }
+}
+

@@ -52,16 +52,6 @@
       opacity: 0.5;
       cursor: not-allowed;
     }
-
-    &.leon-btn-buy, &.leon-btn-trailer {
-      &.disabled:focus {
-        color: #e08821;
-      }
-
-      @media screen and (max-width: 375px) {
-        padding: 10px 14px;
-      }
-    }
 }
 
 // icons

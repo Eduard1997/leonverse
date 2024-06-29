@@ -209,6 +209,7 @@ function initNavbar() {
         // add solid color
         if ($navbarTop.hasClass('nk-navbar-transparent')) {
             $navbarTop[`${scroll > 70 ? 'add' : 'remove'}Class`]('nk-navbar-solid');
+            $navbarTop[`${scroll > 70 ? 'add' : 'remove'}Class`]('leon-nav-scroll');
         }
     });
 }
