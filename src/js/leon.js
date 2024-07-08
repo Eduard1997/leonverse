@@ -123,7 +123,7 @@ const Slider = (function () {
                 touchStartTime = new Date().getTime(); // Record start time
             }, false);
 
-            document.addEventListener('touchmove', function(event) {
+            document.addEventListener('touchmove', (event) => {
                 // Calculate swipe distance
                 const touch = event.changedTouches[0];
                 const distanceX = touch.pageX - touchStartX;
@@ -191,5 +191,24 @@ $(document).ready(() => {
         });
 
         clickedMenuItem.addClass('active');
+    });
+
+    $('.leon-lang-dropdown .dropbtn').on('click', () => {
+        $('.leon-lang-dropdown .dropdown-content').show();
+    });
+
+    // Change flag icon and close dropdown on item click
+    $('.leon-lang-dropdown .dropdown-content a').on('click', function (e) {
+        e.preventDefault();
+        const newFlagClass = $(this).data('flag');
+        $('.leon-lang-dropdown .default-flag').attr('class', `${newFlagClass} default-flag`);
+        $('.leon-lang-dropdown .dropdown-content').hide();
+    });
+
+    // Close dropdown if clicked outside
+    $(document).on('click', (event) => {
+        if (!$(event.target).closest('.leon-lang-dropdown').length) {
+            $('.leon-lang-dropdown .dropdown-content').hide();
+        }
     });
 });

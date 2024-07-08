@@ -100,8 +100,10 @@ p.lead.mission {
 .nav-buy-leon {
     float: right;
     width: 140px;
-    background: linear-gradient(345deg, rgb(68 138 175 / 100%) 49%, rgb(219 113 14 / 100%) 78%);
-    border-radius: 100px;
+    font-weight: 700;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
 
     &.leon-marketplace {
         margin-left: 20px;
@@ -111,6 +113,7 @@ p.lead.mission {
 .leon-btn-top {
     min-width: 200px;
     margin-left: 15px;
+    font-weight: 700;
     line-height: 25px;
     border-radius: 100px;
 
@@ -155,8 +158,8 @@ p.lead.mission {
     justify-content: space-between;
     padding: 10px 24px;
     margin: 10px 0;
+    background: rgb(66 66 66);
     border-radius: 10px;
-    background: rgb(66, 66, 66);
 
     .card-item {
         display: flex;
@@ -182,38 +185,83 @@ p.lead.mission {
 }
 
 .dot {
-    min-width: 15px;
     width: 15px;
+    min-width: 15px;
     height: 15px;
-    border-radius: 15px;
     margin-right: 8px;
+    border-radius: 15px;
 
     &.bgcolor-1 {
-        background: rgb(114, 232, 255);
+        background: rgb(114 232 255);
     }
 
     &.bgcolor-2 {
-        background: rgb(0, 194, 255);
+        background: rgb(0 194 255);
     }
 
     &.bgcolor-3 {
-        background: rgb(72, 141, 255);
+        background: rgb(72 141 255);
     }
 
     &.bgcolor-4 {
-        background: rgb(78, 87, 255);
+        background: rgb(78 87 255);
     }
 
     &.bgcolor-5 {
-        background: rgb(157, 97, 255);
+        background: rgb(157 97 255);
     }
 
     &.bgcolor-6 {
-        background: rgb(231, 127, 255);
+        background: rgb(231 127 255);
     }
 
     &.bgcolor-7 {
-        background: rgb(225, 84, 177);
+        background: rgb(225 84 177);
+    }
+}
+
+.leon-lang-dropdown {
+    display: inline-block;
+    float: right;
+    margin-right: 5rem;
+    margin-left: 20px;
+
+    .dropbtn {
+        padding: 5px;
+        font-size: 16px;
+        color: #000;
+        cursor: pointer;
+        background-color: #fff;
+        border: 1px solid #000;
+
+        span {
+            margin-right: 5px;
+        }
+    }
+
+    .dropdown-content {
+        position: absolute;
+        display: none;
+        min-width: 160px;
+        background-color: #f9f9f9;
+        box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+        z-index: 1;
+
+        a {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            color: black;
+            text-decoration: none;
+
+            &:hover {
+                background-color: #f1f1f1;
+            }
+
+            span {
+                margin-right: 10px;
+            }
+        }
     }
 }
 
@@ -241,6 +289,16 @@ p.lead.mission {
             margin-bottom: 10px;
         }
     }
+
+    .leon-lang-dropdown {
+        float: left;
+        margin-bottom: 10px;
+
+        .dropdown-content {
+            max-height: 100px;
+            overflow: auto;
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -261,19 +319,38 @@ p.lead.mission {
     }
 
     .leon-btn-top {
+        min-width: 15px;
         font-size: 15px;
         line-height: 15px;
-        min-width: 15px;
+    }
+
+    .nk-nav-icons {
+        .mobile-menu-icon {
+            height: 1.3rem;
+        }
+    }
+
+    .nav-buy-leon {
+        max-width: 110px !important;
+        font-size: 12px !important;
+    }
+
+    .nk-title.display-3 {
+        top: -20px;
     }
 }
 
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 431px) {
     .nk-title.display-3 {
-        font-size: 20px;
+        margin-left: 67px;
+        font-size: 30px;
+        top: -15px;
     }
 
     .nk-nav-logo img {
-        max-width: 100px;
+        position: relative;
+        left: -10px;
+        max-width: 150px;
     }
 
     .nk-share-buttons.nk-share-buttons-left{
@@ -282,10 +359,86 @@ p.lead.mission {
     }
 
     .leon-btn-top {
-        margin-top: 33px;
-        font-size: 10px;
+        margin-top: 40px;
+    }
+
+    .nk-header-title {
+        .bg-image img {
+            width: 150%;
+            height: auto;
+            margin-left: -22%;
+        }
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .nk-title.display-3 {
+        position: relative;
+        top: 0;
+        left: 3rem;
+        margin-left: unset;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .leon-btn-top {
         line-height: 10px;
-        min-width: 10px;
+    }
+
+    .nk-title.display-3 {
+        position: relative;
+        top: 3.5rem;
+        left: 1rem;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1441px) {
+    .nav-buy-leon {
+        font-size: 10px;
+        max-width: 90px;
+    }
+
+    .leon-lang-dropdown {
+        .dropdown-content {
+            min-width: unset;
+            max-width: 120px;
+        }
+    }
+}
+
+@media screen and (max-width: 1441px) {
+    .nav-buy-leon {
+        font-size: 9px;
+        max-width: 82px;
+        line-height: 25px;
+    }
+
+    .leon-lang-dropdown {
+        .dropdown-content {
+            min-width: unset;
+            max-width: 120px;
+        }
+    }
+}
+
+@media screen and (max-width: 1327px) {
+    .nav-buy-leon {
+        font-size: 8px;
+        max-width: 76px;
+    }
+}
+
+@media screen and (max-width: 1315px) {
+    .d-lg-leon {
+        display: block !important;
+    }
+}
+
+@media screen and (min-width: 1315px) {
+    .d-lg-leon-block {
+        display: block !important;
     }
 }
 
